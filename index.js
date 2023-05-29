@@ -36,22 +36,32 @@ function fetchData() {
             switch (json.weather[0].main) {
                 case 'Clear':
                     image.src = 'images/clear.png';
+                    document.body.style.backgroundImage = 'linear-gradient(to bottom right, #ffffff, #f8b500)';
+                    document.querySelector('.container').style.boxShadow = '#e4cc8a 0px 3px 8px';
                     break;
 
                 case 'Rain':
                     image.src = 'images/rain.png';
+                    document.body.style.backgroundImage = 'linear-gradient(to bottom right, #757F9A, #D7DDE8)';
+                    document.querySelector('.container').style.boxShadow = 'grey 0px 3px 8px';
                     break;
 
                 case 'Snow':
                     image.src = 'images/snow.png';
+                    document.body.style.backgroundImage = 'linear-gradient(to bottom right, #ffffff, #c9eeff)';
+                    document.querySelector('.container').style.boxShadow = '#c0d8e9 0px 3px 8px';
                     break;
 
                 case 'Clouds':
                     image.src = 'images/cloud.png';
+                    document.body.style.backgroundImage = 'linear-gradient(to bottom right, #ffffff, #f1d588)';
+                    document.querySelector('.container').style.boxShadow = '#e4cc8a 0px 3px 8px';
                     break;
 
                 case 'Haze':
                     image.src = 'images/mist.png';
+                    document.body.style.backgroundImage = 'linear-gradient(to bottom right, #dce8f0, #9796f0)';
+                    document.querySelector('.container').style.boxShadow = '#a2a0e4 0px 3px 8px';
                     break;
 
                 default:
@@ -78,3 +88,23 @@ searchInput.addEventListener('keyup', event => {
         fetchData();
     }
 });
+
+let overlay = document.createElement('div');
+overlay.className = 'overlay';
+document.body.appendChild(overlay);
+
+// Function to update the background and overlay
+function updateBackground(weather, gradient) {
+  image.src = 'images/' + weather.toLowerCase() + '.png';
+  
+  // Apply the new background gradient
+  document.body.style.backgroundImage = gradient;
+  
+  // Apply the new overlay opacity
+  overlay.style.opacity = 1;
+}
+
+// Function to fade out the overlay
+function fadeOutOverlay() {
+  overlay.style.opacity = 0;
+}
