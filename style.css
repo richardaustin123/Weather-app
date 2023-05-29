@@ -11,7 +11,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #d5365e;
+    /* background: #f8b500; */
     /* background-image: linear-gradient(to bottom right, #d5365e, #b56e80); */
     background-image: linear-gradient(to bottom right, #ffffff, #f8b500);
 }
@@ -30,7 +30,7 @@ body{
 
 .container{
     position: relative;
-    width: 400px;
+    max-width: 400px;
     height: 105px;
     background: #fff;
     padding: 28px 32px;
@@ -38,6 +38,7 @@ body{
     border-radius: 18px;
     font-family: 'Roboto', sans-serif;
     transition: 0.6s ease-out;
+    margin: 0 20px;
     /* box-shadow: #533e04 0 5px 2px; */
     box-shadow: #e4cc8a 0px 3px 8px;
 }
